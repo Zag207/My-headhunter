@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class TypeOfEmployment(Enum):
+class WorkLoads(Enum):
     ONLINE = "online"
     HYBRID = "hybrid"
     OFFLINE = "offline"

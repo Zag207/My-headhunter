@@ -1,15 +1,9 @@
 from fastapi import FastAPI
 
-app = FastAPI(
-    title="MyHH",
-)
+from src.routers.company_router import router as company_router
+from src.routers.vacancy_router import router as vacancy_router
 
-@app.get("/company/{company_id}")
-async def get_company_info(company_id: int):
-    ...
+app = FastAPI(title="MyHH")
 
-@app.post("/company")
-async def create_company():
-    ...
-
-# Create endpoints for vacancies, resumes, users
+app.include_router(company_router)
+app.include_router(vacancy_router)

@@ -1,9 +1,9 @@
-from src.load_env_vars import DB_ACCESS
+from src.settings import db_url
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 
 async_engine = create_async_engine(
-    url=f"sqlite+aiosqlite:///{DB_ACCESS}",
+    url=db_url,
     echo=True,
 )
 
